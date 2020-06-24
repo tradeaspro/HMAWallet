@@ -12,3 +12,5 @@ java -jar HMAWallet-1.0.jar
 3. Press  button "Advanced", choose tab "Add account", insert account data. Press "Add to base".
 4. "Set payer", "Get balance", "Check account" are applicable to the selected lines in the accounts` table.
 Accounts data is stored in encrypted form separate for each network in the launch directory.
+
+No restriction. Use at your persil and risk.
