@@ -1,2 +1,2 @@
 # HMAWallet
-Hedera multi account wallet for HBAR coins.
+Hedera Multi Account Wallet for HBAR coins and Utilitis.
