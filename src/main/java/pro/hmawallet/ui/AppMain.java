@@ -100,6 +100,8 @@ public class AppMain extends javax.swing.JFrame {
             setPrice();
         });
 //        timer.start();
+        CopyPastSupport support = new CopyPastSupport();
+        support.setPopup(TF_memo);
     }
 
     final void settitle(String s) {
