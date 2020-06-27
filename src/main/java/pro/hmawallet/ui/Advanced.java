@@ -33,9 +33,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javafx.event.Event;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.ClipboardContent;
 
 public class Advanced extends javax.swing.JFrame {
 
@@ -44,6 +41,8 @@ public class Advanced extends javax.swing.JFrame {
     public Advanced() {
         initComponents();
         client = AppMain.getHederaClient();
+        CopyPastSupport support = new CopyPastSupport();
+        support.setPopup(TF_add_pk, TP_add_showkeys, TF_rec_words, TP_rec_showkeys, TF_create_words, TF_create_aid, TP_create_result, TF_trans_pk, TP_Info);
     }
 
     @SuppressWarnings("unchecked")
@@ -52,19 +51,19 @@ public class Advanced extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel9 = new javax.swing.JPanel();
-        TF_addacc_aid1 = new javax.swing.JTextField();
+        TF_add_aid = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        BT_addacc_tobase1 = new javax.swing.JButton();
+        BT_add_tobase = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
-        TP_showkeys1 = new javax.swing.JTextPane();
-        TF_addacc_private = new javax.swing.JTextField();
+        TP_add_showkeys = new javax.swing.JTextPane();
+        TF_add_pk = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        TP_showkeys = new javax.swing.JTextPane();
-        BT_showkey_ = new javax.swing.JButton();
-        TF_addacc_words = new javax.swing.JTextField();
+        TP_rec_showkeys = new javax.swing.JTextPane();
+        BT_showkey = new javax.swing.JButton();
+        TF_rec_words = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         BT_create_tobase = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -88,7 +87,7 @@ public class Advanced extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         TF_asender = new javax.swing.JTextField();
-        TF_apk = new javax.swing.JTextField();
+        TF_trans_pk = new javax.swing.JTextField();
         TF_arecipient = new javax.swing.JTextField();
         TF_aamount = new javax.swing.JTextField();
         TF_amemo = new javax.swing.JTextField();
@@ -100,7 +99,7 @@ public class Advanced extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         TP_Info = new javax.swing.JTextPane();
-        BT_getinfo_ = new javax.swing.JButton();
+        BT_getinfo = new javax.swing.JButton();
         TF_info = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
@@ -116,22 +115,22 @@ public class Advanced extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(900, 300));
         setResizable(false);
 
-        TF_addacc_aid1.setText("0.0.");
+        TF_add_aid.setText("0.0.");
 
         jLabel14.setText("Account_Id");
 
         jLabel15.setText("Private key");
 
-        BT_addacc_tobase1.setText("Add to base");
-        BT_addacc_tobase1.addActionListener(new java.awt.event.ActionListener() {
+        BT_add_tobase.setText("Add to base");
+        BT_add_tobase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BT_addacc_tobase1ActionPerformed(evt);
+                BT_add_tobaseActionPerformed(evt);
             }
         });
 
-        TP_showkeys1.setText("Attation: Before adding an entry to the database, it is recommended to compare:\n1. Public key linked to \"Account_Id\" in Hedera network. How to get? From network explorer or tab \"Get info\".\n2. The public key that you know from the recovery procedure.\nKey 1 and key 2 must be identical. Otherwise, you will view account balance, but not be able to control the account.\n\n");
-        TP_showkeys1.setAutoscrolls(false);
-        jScrollPane7.setViewportView(TP_showkeys1);
+        TP_add_showkeys.setText("Attation: Before adding an entry to the database, it is recommended to compare:\n1. Public key linked to \"Account_Id\" in Hedera network. How to get? From network explorer or tab \"Get info\".\n2. The public key that you know from the recovery procedure.\nKey 1 and key 2 must be identical. Otherwise, you will view account balance, but not be able to control the account.\n\n");
+        TP_add_showkeys.setAutoscrolls(false);
+        jScrollPane7.setViewportView(TP_add_showkeys);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -149,11 +148,11 @@ public class Advanced extends javax.swing.JFrame {
                             .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TF_addacc_private)
+                            .addComponent(TF_add_pk)
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TF_addacc_aid1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BT_addacc_tobase1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(TF_add_aid, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BT_add_tobase, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
@@ -162,14 +161,14 @@ public class Advanced extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TF_addacc_aid1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_add_aid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TF_addacc_private, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_add_pk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BT_addacc_tobase1)
+                .addComponent(BT_add_tobase)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
                 .addContainerGap())
@@ -179,15 +178,15 @@ public class Advanced extends javax.swing.JFrame {
 
         jLabel2.setText("Recovery phrase must be 22 or 24 words");
 
-        TP_showkeys.setEditable(false);
-        TP_showkeys.setText("You will see two variants recovered key pair. Only one of them can be suitable for your account, if the following is true:\n1. Public key linked to \"AccountId\" on Hedera network. How to get? From network explorer or tab \"Get info\".\n2. The public key that you know from the recovery procedure.\nKey 1 and key 2 must be identical. Otherwise, you will request account balance, but not be able to control the account.\n");
-        TP_showkeys.setAutoscrolls(false);
-        jScrollPane5.setViewportView(TP_showkeys);
+        TP_rec_showkeys.setEditable(false);
+        TP_rec_showkeys.setText("You will see two variants recovered key pair. Only one of them can be suitable for your account, if the following is true:\n1. Public key linked to \"AccountId\" on Hedera network. How to get? From network explorer or tab \"Get info\".\n2. The public key that you know from the recovery procedure.\nKey 1 and key 2 must be identical. Otherwise, you will request account balance, but not be able to control the account.\n");
+        TP_rec_showkeys.setAutoscrolls(false);
+        jScrollPane5.setViewportView(TP_rec_showkeys);
 
-        BT_showkey_.setText("Show keys");
-        BT_showkey_.addActionListener(new java.awt.event.ActionListener() {
+        BT_showkey.setText("Show keys");
+        BT_showkey.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BT_showkey_ActionPerformed(evt);
+                BT_showkeyActionPerformed(evt);
             }
         });
 
@@ -200,11 +199,11 @@ public class Advanced extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(BT_showkey_, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BT_showkey, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(TF_addacc_words, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TF_rec_words, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 941, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
@@ -218,9 +217,9 @@ public class Advanced extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TF_addacc_words, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TF_rec_words, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BT_showkey_)
+                .addComponent(BT_showkey)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
                 .addContainerGap())
@@ -427,7 +426,7 @@ public class Advanced extends javax.swing.JFrame {
                             .addComponent(jLabel10))
                         .addGap(18, 18, 18)))
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TF_apk)
+                    .addComponent(TF_trans_pk)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TF_asender, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -448,7 +447,7 @@ public class Advanced extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TF_apk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_trans_pk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -490,10 +489,10 @@ public class Advanced extends javax.swing.JFrame {
         TP_Info.setAutoscrolls(false);
         jScrollPane3.setViewportView(TP_Info);
 
-        BT_getinfo_.setText("Get");
-        BT_getinfo_.addActionListener(new java.awt.event.ActionListener() {
+        BT_getinfo.setText("Get");
+        BT_getinfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BT_getinfo_ActionPerformed(evt);
+                BT_getinfoActionPerformed(evt);
             }
         });
 
@@ -510,7 +509,7 @@ public class Advanced extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(TF_info, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(BT_getinfo_, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BT_getinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 776, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -527,7 +526,7 @@ public class Advanced extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(TF_info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BT_getinfo_)
+                        .addComponent(BT_getinfo)
                         .addGap(0, 89, Short.MAX_VALUE))
                     .addComponent(jScrollPane3))
                 .addContainerGap())
@@ -636,7 +635,7 @@ public class Advanced extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_BT_thanksActionPerformed
 
-    private void BT_getinfo_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_getinfo_ActionPerformed
+    private void BT_getinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_getinfoActionPerformed
         String ac = TF_info.getText().trim();
         if (ac.length() < 5) {
             new TroubleDialog("Input error", true, "Failure! Invalid account_Id.\n"
@@ -644,11 +643,11 @@ public class Advanced extends javax.swing.JFrame {
         } else {
             getAccountInfo(AccountId.fromString(ac));
         }
-    }//GEN-LAST:event_BT_getinfo_ActionPerformed
+    }//GEN-LAST:event_BT_getinfoActionPerformed
 
-    private void BT_showkey_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_showkey_ActionPerformed
+    private void BT_showkeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_showkeyActionPerformed
         StringBuilder sb = new StringBuilder();
-        String words = TF_addacc_words.getText();
+        String words = TF_rec_words.getText();
         int length = words.split(" ").length;
         KeyPair pair = fromRecovery(words, 0);
         Ed25519PrivateKey oldType;
@@ -670,8 +669,8 @@ public class Advanced extends javax.swing.JFrame {
             sb.append("Words " + length + ". Validation ... Failure. " + m2.validate() + "\n");
             sb.append("Private 2 = " + "\n" + "Public  2 = ");
         }
-        TP_showkeys.setText(sb.toString());
-    }//GEN-LAST:event_BT_showkey_ActionPerformed
+        TP_rec_showkeys.setText(sb.toString());
+    }//GEN-LAST:event_BT_showkeyActionPerformed
 
     private void BT_atransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_atransferActionPerformed
         String operator = TF_asender.getText().trim();
@@ -692,7 +691,7 @@ public class Advanced extends javax.swing.JFrame {
         }
         Client hederaclient = AppMain.mainnet ? Client.forMainnet() : Client.forTestnet();
         AccountId operatorId = AccountId.fromString(operator);
-        hederaclient.setOperator(operatorId, Ed25519PrivateKey.fromString(TF_apk.getText().trim()));
+        hederaclient.setOperator(operatorId, Ed25519PrivateKey.fromString(TF_trans_pk.getText().trim()));
         AccountId recipientId = AccountId.fromString(recipient);
         Hbar amount = Hbar.from(new BigDecimal(TF_aamount.getText().trim()), HbarUnit.Hbar);
         String memo = TF_amemo.getText().trim();
@@ -741,53 +740,53 @@ public class Advanced extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BT_create_getidActionPerformed
 
-    private void BT_addacc_tobase1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_addacc_tobase1ActionPerformed
-        String aid = TF_addacc_aid1.getText().trim();
-        String rw = TF_addacc_private.getText().trim();
+    private void BT_add_tobaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_add_tobaseActionPerformed
+        String aid = TF_add_aid.getText().trim();
+        String rw = TF_add_pk.getText().trim();
         if (aid.length() < 5) {
             new TroubleDialog("Input error", true, "Failure! Invalid account_id.\n"
             ).setVisible(true);
             return;
         }
         AppMain.addNew(aid, rw);
-        TF_addacc_aid1.setText("0.0.");
-        TF_addacc_private.setText("");
+        TF_add_aid.setText("0.0.");
+        TF_add_pk.setText("");
         try {
             AppMain.updateBalance(aid);
         } catch (HederaStatusException | HederaNetworkException ex) {
             System.out.println(evt.getActionCommand() + " " + ex.getMessage());
         }
-    }//GEN-LAST:event_BT_addacc_tobase1ActionPerformed
+    }//GEN-LAST:event_BT_add_tobaseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BT_addacc_tobase1;
+    private javax.swing.JButton BT_add_tobase;
     private javax.swing.JButton BT_atransfer;
     private javax.swing.JButton BT_create_getid;
     private javax.swing.JButton BT_create_tobase;
     private javax.swing.JButton BT_generate;
-    private javax.swing.JButton BT_getinfo_;
-    private javax.swing.JButton BT_showkey_;
+    private javax.swing.JButton BT_getinfo;
+    private javax.swing.JButton BT_showkey;
     private javax.swing.JButton BT_thanks;
     private javax.swing.JButton BT_update_;
     private javax.swing.JTextField TF_aamount;
-    private javax.swing.JTextField TF_addacc_aid1;
-    private javax.swing.JTextField TF_addacc_private;
-    private javax.swing.JTextField TF_addacc_words;
+    private javax.swing.JTextField TF_add_aid;
+    private javax.swing.JTextField TF_add_pk;
     private javax.swing.JTextField TF_amemo;
-    private javax.swing.JTextField TF_apk;
     private javax.swing.JTextField TF_arecipient;
     private javax.swing.JTextField TF_asender;
     private javax.swing.JTextField TF_create_aid;
     private javax.swing.JTextField TF_create_balance;
     private javax.swing.JTextField TF_create_words;
     private javax.swing.JTextField TF_info;
+    private javax.swing.JTextField TF_rec_words;
+    private javax.swing.JTextField TF_trans_pk;
     private javax.swing.JTextField TF_update_curent;
     private javax.swing.JTextPane TP_Info;
     private javax.swing.JTextPane TP_about;
+    private javax.swing.JTextPane TP_add_showkeys;
     private javax.swing.JTextPane TP_create_result;
-    private javax.swing.JTextPane TP_showkeys;
-    private javax.swing.JTextPane TP_showkeys1;
+    private javax.swing.JTextPane TP_rec_showkeys;
     private javax.swing.JTextPane TP_update;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
@@ -961,22 +960,5 @@ public class Advanced extends javax.swing.JFrame {
 //            BT_addacc_tobase.setEnabled(false);
         }
         return sb.toString();
-    }
-
-    private void copyToClipboard(String copyThis) {
-        final Clipboard clipboard = Clipboard.getSystemClipboard();
-        final ClipboardContent content = new ClipboardContent();
-        content.putString(copyThis);
-        clipboard.setContent(content);
-    }
-
-    private void handleTextSelect(Event event) {
-//        if (event.getSource().getClass() == TextField.class) {
-//            TextField text = (TextField) event.getSource();
-//            text.selectAll();
-//        } else if (event.getSource().getClass() == TextArea.class) {
-//            TextArea text = (TextArea) event.getSource();
-//            text.selectAll();
-//        }
     }
 }

@@ -76,11 +76,11 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TF_addacc_private" max="32767" attributes="0"/>
+                                  <Component id="TF_add_pk" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="TF_addacc_aid1" min="-2" pref="129" max="-2" attributes="0"/>
-                                          <Component id="BT_addacc_tobase1" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                                          <Component id="TF_add_aid" min="-2" pref="129" max="-2" attributes="0"/>
+                                          <Component id="BT_add_tobase" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
@@ -96,16 +96,16 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="TF_addacc_aid1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TF_add_aid" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="TF_addacc_private" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TF_add_pk" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="BT_addacc_tobase1" min="-2" max="-2" attributes="0"/>
+                      <Component id="BT_add_tobase" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane7" pref="119" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -114,7 +114,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="TF_addacc_aid1">
+            <Component class="javax.swing.JTextField" name="TF_add_aid">
               <Properties>
                 <Property name="text" type="java.lang.String" value="0.0."/>
               </Properties>
@@ -129,12 +129,12 @@
                 <Property name="text" type="java.lang.String" value="Private key"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="BT_addacc_tobase1">
+            <Component class="javax.swing.JButton" name="BT_add_tobase">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add to base"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BT_addacc_tobase1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BT_add_tobaseActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane7">
@@ -144,7 +144,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextPane" name="TP_showkeys1">
+                <Component class="javax.swing.JTextPane" name="TP_add_showkeys">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Attation: Before adding an entry to the database, it is recommended to compare:&#xa;1. Public key linked to &quot;Account_Id&quot; in Hedera network. How to get? From network explorer or tab &quot;Get info&quot;.&#xa;2. The public key that you know from the recovery procedure.&#xa;Key 1 and key 2 must be identical. Otherwise, you will view account balance, but not be able to control the account.&#xa;&#xa;"/>
                     <Property name="autoscrolls" type="boolean" value="false"/>
@@ -152,7 +152,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JTextField" name="TF_addacc_private">
+            <Component class="javax.swing.JTextField" name="TF_add_pk">
             </Component>
           </SubComponents>
         </Container>
@@ -173,12 +173,12 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Component id="BT_showkey_" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="BT_showkey" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="TF_addacc_words" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="TF_rec_words" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jScrollPane5" alignment="1" pref="941" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
@@ -198,9 +198,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="TF_addacc_words" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_rec_words" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="BT_showkey_" min="-2" max="-2" attributes="0"/>
+                      <Component id="BT_showkey" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jScrollPane5" pref="125" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -221,7 +221,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextPane" name="TP_showkeys">
+                <Component class="javax.swing.JTextPane" name="TP_rec_showkeys">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="You will see two variants recovered key pair. Only one of them can be suitable for your account, if the following is true:&#xa;1. Public key linked to &quot;AccountId&quot; on Hedera network. How to get? From network explorer or tab &quot;Get info&quot;.&#xa;2. The public key that you know from the recovery procedure.&#xa;Key 1 and key 2 must be identical. Otherwise, you will request account balance, but not be able to control the account.&#xa;"/>
@@ -230,15 +230,15 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="BT_showkey_">
+            <Component class="javax.swing.JButton" name="BT_showkey">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Show keys"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BT_showkey_ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BT_showkeyActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="TF_addacc_words">
+            <Component class="javax.swing.JTextField" name="TF_rec_words">
             </Component>
           </SubComponents>
         </Container>
@@ -556,7 +556,7 @@
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="TF_apk" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TF_trans_pk" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="TF_asender" min="-2" pref="178" max="-2" attributes="0"/>
@@ -584,7 +584,7 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="TF_apk" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TF_trans_pk" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -620,7 +620,7 @@
                     <Property name="text" type="java.lang.String" value="0.0."/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="TF_apk">
+                <Component class="javax.swing.JTextField" name="TF_trans_pk">
                 </Component>
                 <Component class="javax.swing.JTextField" name="TF_arecipient">
                   <Properties>
@@ -680,7 +680,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="TF_info" min="-2" pref="103" max="-2" attributes="0"/>
-                              <Component id="BT_getinfo_" min="-2" pref="103" max="-2" attributes="0"/>
+                              <Component id="BT_getinfo" min="-2" pref="103" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -701,7 +701,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="TF_info" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="BT_getinfo_" min="-2" max="-2" attributes="0"/>
+                              <Component id="BT_getinfo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="89" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane3" max="32767" attributes="0"/>
@@ -727,12 +727,12 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="BT_getinfo_">
+            <Component class="javax.swing.JButton" name="BT_getinfo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Get"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BT_getinfo_ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BT_getinfoActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="TF_info">
