@@ -15,4 +15,5 @@ Accounts data is stored in encrypted form separate for each network in the launc
 
 No restriction. No payments.
 Use at your persil and risk.
+
 Address for thank and support software development: 0.0.2724
