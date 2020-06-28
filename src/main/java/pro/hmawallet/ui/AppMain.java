@@ -95,7 +95,7 @@ public class AppMain extends javax.swing.JFrame {
 //        System.out.println(net + " accounts recorded: " + accountsList.size());
 
         htclient = new OkHttpClient.Builder().readTimeout(0, TimeUnit.MILLISECONDS).build();
-//        request = new Request.Builder().url("https://api.binance.com/api/v3/ticker/price?symbol=HBARUSDT").build();
+        request = new Request.Builder().url("https://api.binance.com/api/v3/ticker/price?symbol=HBARUSDT").build();
         setPrice();
         timer = new javax.swing.Timer(2000, (java.awt.event.ActionEvent e) -> {
             setPrice();
@@ -142,27 +142,27 @@ public class AppMain extends javax.swing.JFrame {
     }
 
     private void setPrice() {
-//        try {
-//            Response response = htclient.newCall(request).execute();
-//            ResponseBody body = response.body();
-//            if (body != null) {
-//                String message = body.string();
-//                if (message.startsWith("{")) {
-//                    double price = new JSONObject(message).getDouble("price");
-////                System.out.println(price);
-//                    TF_price.setText(Double.toString(round(price, 6)));
-//                    if (!onpause) {
-//                        for (int i = 0; i < tm.getRowCount(); i++) {
-//                            BigDecimal bd = (BigDecimal) tm.getValueAt(i, tm.findColumn("HBAR"));
-//                            double fiat = round(bd.doubleValue() * price, 6);
-//                            tm.setValueAt(fiat, i, tm.findColumn("USD"));
-//                        }
-//                    }
-//                }
-//            }
-//        } catch (IOException ex) {
-//            System.out.println("setPrice " + ex.getMessage());
-//        }
+        try {
+            Response response = htclient.newCall(request).execute();
+            ResponseBody body = response.body();
+            if (body != null) {
+                String message = body.string();
+                if (message.startsWith("{")) {
+                    double price = new JSONObject(message).getDouble("price");
+//                System.out.println(price);
+                    TF_price.setText(Double.toString(round(price, 6)));
+                    if (!onpause) {
+                        for (int i = 0; i < tm.getRowCount(); i++) {
+                            BigDecimal bd = (BigDecimal) tm.getValueAt(i, tm.findColumn("HBAR"));
+                            double fiat = round(bd.doubleValue() * price, 6);
+                            tm.setValueAt(fiat, i, tm.findColumn("USD"));
+                        }
+                    }
+                }
+            }
+        } catch (IOException ex) {
+            System.out.println("setPrice " + ex.getMessage());
+        }
     }
 
     private void setPrice(int row) {
