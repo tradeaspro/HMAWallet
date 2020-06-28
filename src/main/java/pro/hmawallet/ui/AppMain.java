@@ -24,11 +24,6 @@ import com.hedera.sdk.keygen.EDKeyPair;
 import com.hedera.sdk.keygen.KeyPair;
 import com.hedera.sdk.keygen.Reference;
 
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
-import com.squareup.okhttp.ResponseBody;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -63,6 +58,11 @@ import javax.crypto.spec.PBEParameterSpec;
 
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 import org.json.JSONObject;
 
