@@ -122,7 +122,7 @@
       <SubComponents>
         <Component class="javax.swing.JPasswordField" name="PF">
           <Properties>
-            <Property name="text" type="java.lang.String" value="passwordpassword"/>
+            <Property name="text" type="java.lang.String" value="passwordpas"/>
             <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="TB_apply"/>
             </Property>

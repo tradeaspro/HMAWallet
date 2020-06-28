@@ -249,7 +249,7 @@ public class AppMain extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        PF.setText("passwordpassword");
+        PF.setText("passwordpas");
         PF.setNextFocusableComponent(TB_apply);
 
         TB_apply.setText("Apply");
