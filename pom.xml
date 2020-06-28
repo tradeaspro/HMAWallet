@@ -28,12 +28,7 @@
             <groupId>io.grpc</groupId>
             <artifactId>grpc-okhttp</artifactId>
             <version>${grpc.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.squareup.okio</groupId>
-                    <artifactId>okio</artifactId>
-                </exclusion>
-            </exclusions>
+           
         </dependency> 
         <dependency>
             <groupId>io.grpc</groupId>
@@ -67,19 +62,7 @@
             <version>0.3.0</version>
             <type>jar</type>
         </dependency>
-        
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>4.3.1</version>
-            <type>jar</type>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.jetbrains.kotlin</groupId>
-                    <artifactId>kotlin-stdlib-common</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>        
+           
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -98,11 +81,7 @@
             <version>1.3.2</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-common</artifactId>
-            <version>1.3.61</version>
-        </dependency>
+        
     </dependencies>
     
     <build>
