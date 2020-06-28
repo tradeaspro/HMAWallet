@@ -64,10 +64,6 @@ import javax.crypto.spec.PBEParameterSpec;
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 
-//import okhttp3.OkHttpClient;
-//import okhttp3.Request;
-//import okhttp3.Response;
-//import okhttp3.ResponseBody;
 import org.json.JSONObject;
 
 public class AppMain extends javax.swing.JFrame {
