@@ -13,5 +13,6 @@ java -jar HMAWallet-1.0.jar
 4. "Set payer", "Get balance", "Check account" are applicable to the selected lines in the accounts` table.
 Accounts data is stored in encrypted form separate for each network in the launch directory.
 
-No restriction. No payments.Use at your persil and risk.
+No restriction. No payments.
+Use at your persil and risk.
 Address for thank and support software development: 0.0.2724
