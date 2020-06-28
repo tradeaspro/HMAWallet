@@ -24,6 +24,11 @@ import com.hedera.sdk.keygen.EDKeyPair;
 import com.hedera.sdk.keygen.KeyPair;
 import com.hedera.sdk.keygen.Reference;
 
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
+import com.squareup.okhttp.ResponseBody;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -59,11 +64,10 @@ import javax.crypto.spec.PBEParameterSpec;
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import okhttp3.ResponseBody;
-
+//import okhttp3.OkHttpClient;
+//import okhttp3.Request;
+//import okhttp3.Response;
+//import okhttp3.ResponseBody;
 import org.json.JSONObject;
 
 public class AppMain extends javax.swing.JFrame {
@@ -93,7 +97,7 @@ public class AppMain extends javax.swing.JFrame {
         System.out.println("Selected: " + net);
 //        System.out.println(net + " accounts recorded: " + accountsList.size());
 
-        htclient = new OkHttpClient.Builder().build();
+        htclient = new OkHttpClient();//.Builder().build();
         request = new Request.Builder().url("https://api.binance.com/api/v3/ticker/price?symbol=HBARUSDT").build();
         setPrice();
         timer = new javax.swing.Timer(2000, (java.awt.event.ActionEvent e) -> {
