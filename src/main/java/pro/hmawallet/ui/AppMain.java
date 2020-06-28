@@ -44,7 +44,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -94,7 +93,7 @@ public class AppMain extends javax.swing.JFrame {
         System.out.println("Selected: " + net);
 //        System.out.println(net + " accounts recorded: " + accountsList.size());
 
-        htclient = new OkHttpClient.Builder().readTimeout(0, TimeUnit.MILLISECONDS).build();
+        htclient = new OkHttpClient.Builder().build();
         request = new Request.Builder().url("https://api.binance.com/api/v3/ticker/price?symbol=HBARUSDT").build();
         setPrice();
         timer = new javax.swing.Timer(2000, (java.awt.event.ActionEvent e) -> {
@@ -161,7 +160,7 @@ public class AppMain extends javax.swing.JFrame {
                 }
             }
         } catch (IOException ex) {
-            System.out.println("setPrice " + ex.getMessage());
+            System.out.println(ex.getMessage());
         }
     }
 
